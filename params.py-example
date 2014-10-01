@@ -1,0 +1,4 @@
+token = "a39f9f9ed5a8257de8c70dc7f591fae7"
+key = "5460d64159b8f7208512297108a5a150"
+secret = "4e92ef872c2cc8b279401a99fe516a8e"
+output_path = "/tmp/test.js"
