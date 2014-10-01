@@ -1,5 +1,6 @@
 # production config file
 params.py
+data.js
 
 # vim swap file
 \.*.swp
