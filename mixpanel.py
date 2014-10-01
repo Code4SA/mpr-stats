@@ -43,7 +43,7 @@ class Mixpanel(object):
             params - Extra parameters associated with method
         """
         params['api_key'] = self.api_key
-        params['expire'] = int(time.time()) + 600   # Grant this request 10 minutes.
+        params['expire'] = int(time.time()) + 1200   # Grant this request 10 minutes.
         params['format'] = format
         if 'sig' in params: del params['sig']
         params['sig'] = self.hash_args(params)

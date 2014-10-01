@@ -30,7 +30,6 @@ secret = params.secret
 
 api = Mixpanel(key, secret)
 
-
 total1 = get_event_total(interval=1)
 total7 = get_event_total(interval=7)
 total30 = get_event_total(interval=30)
