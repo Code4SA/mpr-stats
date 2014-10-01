@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Medicine Prices Statistics</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            font-family: 'Ubuntu', sans;
+        }
+
+        h1 {
+            font-size: 60px;
+        }
+
+        .results {
+            font-size: 60px;
+            
+        }
+
+        .results td, .results th {
+            padding: 5px;
+        }
+
+        .big {
+            font-size: 20em;
+            line-height: 1em;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <h1 class="col-md-12">Searches for cheaper meds</h1>
+        </div>
+        <div>
+            <h1 id="bignumber" class="col-md-4 big">10</h1>
+            <table class="col-md-5 results">
+                <tr><th>1 Day:</th><td id="day1">10</td></tr>
+                <tr><th>7 Days:</th><td id="day7">50</td></tr>
+                <tr><th>30 Days:</th><td id="day30">100</td></tr>
+            </table>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            jQuery.getJSON("data.js", "", function(data) {
+                console.log(data["1 day"]);
+                $("#bignumber").html(data["1 day"]["#related"]);
+                $("#day1").html(data["1 day"]["#related"]);
+                $("#day7").html(data["7 day"]["#related"]);
+                $("#day30").html(data["30 day"]["#related"]);
+                
+                console.log(data);
+            });
+        });
+    </script>
+  </body>
+</html>
